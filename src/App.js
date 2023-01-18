@@ -71,6 +71,7 @@ function SampleCard (props) {
   )
 }
 
+//// new commit added
 
 // right ways 
 // const name = ()=>{handleClick()}

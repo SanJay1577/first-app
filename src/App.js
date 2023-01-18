@@ -52,7 +52,7 @@ function SampleCard (props) {
   }
 
   const describeStyle = { 
-    display : show ? "block" :"none" ,
+    display : show ? "block" :"none" 
   
   }
 

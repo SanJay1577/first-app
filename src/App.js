@@ -1,43 +1,60 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartData } from './CartData';
+ import { StateLessComponent } from './StateLessComponent';
+
+const data = [
+  {
+    name :"apple",
+    details:"fruits",
+    clr:"whitesmoke",
+  },
+  {
+    name :"carrot",
+    details:"vegetables",
+    clr:"brown",
+  },
+  {
+    name :"chocolate",
+    details:"junk",
+    clr:"green",
+  }
+]
 
 function App() {
 
-  const data = [
-    {
-      name :"apple",
-    
-      details:"fruits",
-      clr:"whitesmoke",
-    },
-    {
-      name :"carrot",
-      details:"vegetables",
-      clr:"brown",
-    },
-    {
-      name :"chocolate",
-      details:"junk",
-      clr:"green",
-    }
-  ]
+  //updating my states 
+const [cart, setCart] = useState(data)
 
 // let state = "sanjayn"
 // state = "sethu"
 
   return (
     <div className="App">
-        {data.map((item, idx)=>( 
+      {/* <div>
+        {cart.map((item, idx)=>( 
         <SampleCard 
         key={idx}
         name={item.name}
          details={item.details}
-          clr={item.clr} /> 
+          clr={item.clr}
+
+           /> 
           ))}
 
+    <div>Cart {cart.length} </div>
+    </div>
+    */}
+
+
+      <CartData/>
+    
+    <StateLessComponent name="Componenet"/>
 
     </div>
+
   );
 }
 
@@ -50,7 +67,6 @@ function SampleCard (props) {
   const handleClick = () =>{
    setShow(!show)
   }
-
   const describeStyle = { 
     display : show ? "block" :"none" 
   
@@ -65,8 +81,12 @@ function SampleCard (props) {
       {/* {show ? <p>Card Details: {props.details}</p> : ""} */}
 
       {/* conditional styling  */}
-      <p style={describeStyle}>Card Details: {props.details}</p>
-      <button style={{color : show ? "red" : "white"}} onClick={()=>{handleClick()}} >{!show ? "add to card" : "remove to card"}</button>
+      {/* <p style={describeStyle}>Card Details: {props.details}</p> */}
+
+      <p>Card Details: {props.details}</p>
+
+      <button style={{display : !show ? "block" : "none"}} onClick={()=>{handleClick()}} >Add</button>
+      <button style={{display : show ? "block" : "none"}} onClick={()=>{handleClick()}} >Remove </button>
     </div> 
   )
 }
@@ -85,5 +105,33 @@ function SampleCard (props) {
 // Props vs state
 
 //key is a unique identity for a component 
+
+
+//Components ,
+// componets lifeccyle - not seen
+//state and sateless
+// resulable 
+//passing dynamic data to the components
+
+
+export const prodData = [
+  {
+    prodName : "FancyProduct1",
+    price :"40 -80"
+  },
+  {
+    prodName : "FancyProduct2",
+    price :"40 -80"
+  },
+  {
+    prodName : "FancyProduct3",
+    price :"40 -80"
+  },
+  {
+    prodName : "FancyProduct4",
+    price :"40 -80"
+  },
+]
+
 
 

@@ -40,8 +40,7 @@ function CardDetails ({setCard, setItems, prodPrice, prodDescription, prodImage,
     const handleCartAdd = (idx, setItems, item) => {
         setShowBtn(!showBtn)
         setItems(item + 1)
-        
-        
+ 
     }
     const handleCartRemove = (idx, setItems , item, setCard) =>{
        setShowBtn(!showBtn)
